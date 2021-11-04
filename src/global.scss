@@ -24,3 +24,26 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+ion-content{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;  
+    height: 100% !important;
+}
+
+.my-custom-class-emergente .modal-wrapper{
+    --background: white !important;
+    width: 80%;
+    --border-radius: 10px;
+    --height: 87%;
+}
+.my-custom-class-scanner .modal-wrapper{
+    --background: white !important;
+    width: 80%;
+    --border-radius: 10px;
+    --height: 60%;
+}
+
+.aclass{
+    background-color: red;
+}

@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<ion-content>
+    <ion-item>
+        <ion-title class="ion-no-padding">
+            Trasferir a cuenta de terceros
+        </ion-title>
+        <ion-icon slot="end" name="add-circle-outline" [routerLink]="['/cuenta-terceros']" routerLinkActive="router-link-active" ></ion-icon>   
+    </ion-item>
+    <ion-item>
+      <ion-title class="ion-no-padding">
+          Transferir por QR
+      </ion-title>
+      <ion-icon slot="end" name="scan" (click)= "scan()"></ion-icon>   
+  </ion-item>
+    <ion-list *ngFor="let cuenta of listaCuentas">    
+        <ion-item >
+          <ion-label>
+            {{cuenta.alias}}
+          </ion-label>
+          <ion-label>
+            ...{{cuenta.numero_cuenta | slice: 6}}
+          </ion-label>
+          <ion-icon slot="end" name="arrow-forward" color="primary" [routerLink]="['/movimiento/',cuenta._id]" routerLinkActive="router-link-active" ></ion-icon>
+        </ion-item>
+      </ion-list>
+</ion-content>
+
+<app-fotter-interno></app-fotter-interno>

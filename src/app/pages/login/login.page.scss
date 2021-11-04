@@ -1,0 +1,54 @@
+ion-grid{
+    margin: 3rem auto !important;
+}
+
+ion-img{
+    width: 80%;
+    margin: 2rem auto;
+}
+
+ion-item{
+    width: 95%;     
+    height: auto;
+    margin: 1.5vh auto 0;
+    ion-label{
+        font-size: 14pt !important;
+        color: rgb(121, 120, 120);
+    }    
+    ion-input{
+        font-size: 13pt;
+    }
+    ion-select{
+        font-size: 13pt;
+    }
+}
+
+ion-button{
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.lblRegistro, .lblOlvido{
+    width: 50%;
+    margin-left: 1rem;
+}
+
+.lblRegistro{
+    float: left;
+}
+
+.lblOlvido{ 
+    float: right;
+}
+
+p{
+    color: #3880ff;
+}
+
+.error-message{
+    color: red;
+}
+
+div{
+   margin-left: 2rem;
+}

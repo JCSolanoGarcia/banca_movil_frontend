@@ -1,0 +1,21 @@
+
+<ion-content>
+  <ion-card>
+    <ion-card-title>
+      QR generator
+    </ion-card-title>
+    <ion-card-content>
+      
+      <ngx-qrcode [elementType]="elementType" 
+                  [value]="value"
+                  heigth= 500
+                  cssClass="aclass"
+                  errorCorrectionLevel="L">
+      </ngx-qrcode>
+    </ion-card-content>
+    <ion-button (click)="closeModal()" expand="block" shape="round" type="button" color="primary">
+      Continuar
+    </ion-button>
+  </ion-card>
+  
+</ion-content>

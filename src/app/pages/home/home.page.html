@@ -1,0 +1,38 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-item>
+    <ion-title class="ion-no-padding">
+      Mis Productos
+    </ion-title>
+    <!-- <ion-icon slot="end" name="add-circle-outline" ></ion-icon>  -->  
+  </ion-item>      
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        Tipo Cuenta
+      </ion-label>
+      <ion-label>
+        No Cuenta
+      </ion-label>
+      <ion-label>
+        Saldo
+      </ion-label>
+    </ion-item>
+  </ion-list>  
+  <ion-list *ngFor="let cuenta of cuentas">    
+    <ion-item>
+      <ion-label>
+        {{cuenta.tipo_cuenta}}
+      </ion-label>
+      <ion-label>
+        ....{{cuenta.numero_cuenta | slice: 6}}
+      </ion-label>
+      <ion-label>
+        {{cuenta.saldo | currency:'COP':'symbol-narrow':'.0-0'}}
+      </ion-label>
+      <ion-icon slot="end" name="arrow-forward" color="primary" [routerLink]="['/detalle/', cuenta._id]" routerLinkActive="router-link-active" ></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<app-fotter-interno></app-fotter-interno>

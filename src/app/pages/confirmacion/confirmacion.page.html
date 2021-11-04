@@ -1,0 +1,35 @@
+
+<ion-content>
+  <ion-card> 
+    <ion-card-title>
+      Transacción Exitosa
+    </ion-card-title>
+    <ion-card-content class="ion-no-padding">
+      <ion-label>Cuenta origen</ion-label>
+      <ion-item>
+        <ion-label>{{label}}</ion-label>
+      </ion-item>
+      <ion-label>Cuenta destino</ion-label>
+      <ion-item>
+        <ion-label>{{label1}}</ion-label>
+      </ion-item>
+      <ion-label>Monto</ion-label>
+      <ion-item>
+        <ion-label>{{label2 }}</ion-label>
+      </ion-item>
+      <ion-label>Moneda</ion-label>
+      <ion-item>
+        <ion-label>{{label3}}</ion-label>
+      </ion-item>
+      <ion-label>Numero de transacción</ion-label>
+      <ion-item>
+        <ion-label>{{label4}}</ion-label>
+      </ion-item>      
+    </ion-card-content>
+    <ion-button (click)="closeModal()" expand="block" shape="round" type="button" color="primary">
+      Continuar
+    </ion-button>
+  </ion-card>
+</ion-content>
+
+

@@ -1,0 +1,115 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-item>
+    <ion-title class="ion-no-padding">
+      Mis Transferencias
+    </ion-title>   
+  </ion-item>      
+  
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-no-padding">
+      <ion-col class="ion-no-padding">
+        <form [formGroup]="formTerceros" (ngSubmit)="guardar()" class="ion-no-padding">
+          <ion-item>
+            <ion-label position="stacked">
+              ALIAS
+            </ion-label>
+            <ion-input  type= "text"
+                        formControlName ="alias"
+                        >
+            </ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMensaje.alias">
+            <ng-container *ngIf="alias.hasError(error.type) && (alias.dirty || alias.touched)">
+              <small class="error-message">{{error.message}} </small>
+            </ng-container>            
+          </div>
+          <ion-item>
+            <ion-label position="stacked">
+              BANCO
+            </ion-label>
+            <ion-select class="custom-options" 
+                          formControlName ="nombre_banco"
+                          placeholder='Seleccionar'>
+                          <ion-select-option *ngFor="let banco of listaBancos" value={{banco.nombre_banco}}>{{banco.nombre_banco}}</ion-select-option>
+              </ion-select>
+          </ion-item>
+          <div *ngFor="let error of errorMensaje.nombre_banco">
+            <ng-container *ngIf="nombre_banco.hasError(error.type) && (nombre_banco.dirty || nombre_banco.touched)">
+              <small class="error-message">{{error.message}} </small>
+            </ng-container>            
+          </div>
+          <ion-item>
+            <ion-label position="stacked">
+              TIPO DE CUENTA
+            </ion-label>
+            <ion-select class="custom-options" 
+                          formControlName ="tipo_cuenta"
+                          placeholder='Seleccionar'>
+                          <ion-select-option *ngFor="let tipoC of tipoCuenta" value={{tipoC.tipo_cuenta}}>{{tipoC.tipo_cuenta}}</ion-select-option>
+              </ion-select>
+          </ion-item>
+          <div *ngFor="let error of errorMensaje.tipo_cuenta">
+            <ng-container *ngIf="tipo_cuenta.hasError(error.type) && (tipo_cuenta.dirty || tipo_cuenta.touched)">
+              <small class="error-message">{{error.message}} </small>
+            </ng-container>            
+          </div>
+          <ion-item>
+            <ion-label position="stacked">
+              NÚMERO DE CUENTA
+            </ion-label>
+            <ion-input  inputmode="numeric"
+                        pattern = "[0-9]*"
+                        type= "text"
+                        formControlName ="numero_cuenta"
+                        >
+            </ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMensaje.numero_cuenta">
+            <ng-container *ngIf="numero_cuenta.hasError(error.type) && (numero_cuenta.dirty || numero_cuenta.touched)">
+              <small class="error-message">{{error.message}} </small>
+            </ng-container>            
+          </div>
+          <ion-item>
+            <ion-label position="stacked">
+              IDENTIFICACIÓN DEL TITULAR
+            </ion-label>
+            <ion-input  inputmode="numeric"
+                        pattern = "[0-9]*"
+                        type= "text"
+                        formControlName ="identificacion_titular"
+                        >
+            </ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMensaje.identificacion_titular">
+            <ng-container *ngIf="identificacion_titular.hasError(error.type) && (identificacion_titular.dirty || identificacion_titular.touched)">
+              <small class="error-message">{{error.message}} </small>
+            </ng-container>            
+          </div>
+          <ion-item>
+            <ion-label position="stacked">
+              MONEDA
+            </ion-label>
+            <ion-select class="custom-options" 
+                          formControlName ="moneda"
+                          placeholder='Seleccionar'>
+                          <ion-select-option *ngFor="let tipoM of tipoMoneda" value={{tipoM.moneda}}>{{tipoM.moneda}}</ion-select-option>
+              </ion-select>
+          </ion-item>
+          <div *ngFor="let error of errorMensaje.moneda">
+            <ng-container *ngIf="moneda.hasError(error.type) && (moneda.dirty || moneda.touched)">
+              <small class="error-message">{{error.message}} </small>
+            </ng-container>            
+          </div>
+          
+          <ion-button expand="block" shape="round" type="submit" color="primary" [disabled]="!formTerceros.valid">
+            Agregar Cuenta Destino
+          </ion-button>
+        </form>        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<app-fotter-interno></app-fotter-interno>

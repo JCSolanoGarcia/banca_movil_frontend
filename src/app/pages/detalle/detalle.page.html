@@ -1,0 +1,35 @@
+
+<app-header></app-header>
+<ion-content>
+  <ion-item>
+    <ion-label>
+      <h1>Resumen de movimientos</h1>
+    </ion-label>
+  </ion-item>
+  <ion-item (click)= "qrCode()">
+    <ion-label >
+      <h5>Generar Código QR</h5>      
+    </ion-label>
+    <ion-icon slot="end" name="scan" ></ion-icon>
+  </ion-item>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Destino</th>
+        <th >Monto</th>
+        <th >Saldo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cuenta">        
+        <td>{{item.createdAt | date}}</td>
+        <td>{{item.cuenta_destino}}</td>
+        <td>{{item.monto | currency:'COP':'symbol-narrow':'.0-0'}}</td>
+        <td>{{item.saldo | currency:'COP':'symbol-narrow':'.0-0'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</ion-content>
+<app-fotter-interno></app-fotter-interno>
